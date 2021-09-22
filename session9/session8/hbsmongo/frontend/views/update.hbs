@@ -1,0 +1,25 @@
+{{>header}}
+{{>navbar}}
+
+<section class="container my-3">
+    <form method="post">
+        <div class="row">
+        <div class="mb-3 col-6">
+            <input type="number" class="form-control" name="name" value="{{customer.name}}">
+            <div class="mb-3 col-6">
+            <label class="label-control mb-2">Age</label>
+            <input placeholder="Age" class="form-control" value="{{customer.Balance}}" name="Balance">
+        </div>
+        <div class="mb-3 col-6">
+            <label class="label-control mb-2">Email</label>
+            <input placeholder="email" class="form-control"  value="{{user.status}}" name="status">
+        </div>
+          <div class="mb-3 col-12">
+
+            <button class="btn btn-primary">update customer data</button>
+        </div>
+
+        </div>
+    </form>
+</section>
+{{>footer}}

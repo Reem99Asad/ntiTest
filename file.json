@@ -1,0 +1,7 @@
+
+data =[
+    {
+        name:"marwa",age:36
+    }
+]
+fs.writeFileSync('data.json',JSON.stringify(data))

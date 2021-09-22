@@ -1,0 +1,33 @@
+{{>header}}
+{{>navbar}}
+<table class="table" border="2">
+  <thead>
+    <tr>
+      <th scope="col">accNum</th>
+      <th scope="col">Name</th>
+      <th scope="col">Balance</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+            <tr>
+                <td>{{this.accNum}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.Balance}}</td>
+                <td>
+                    <a href="withdraw/{{this.accNum}}" class="btn btn-primary m-1">withdraw</a>
+                    <a href="addbalance/{{this.accNum}}" class="btn btn-warning m-1">addBalance</a>
+                    <a href="update/{{this.accNum}}" class="btn btn-success m-1">update</a>
+
+            <button class="btn btn-primary">activate</button>
+        
+                </td>
+            </tr>
+           
+{{/each}}
+
+
+  </tbody>
+  
+</table>

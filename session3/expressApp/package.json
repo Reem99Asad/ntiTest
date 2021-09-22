@@ -1,0 +1,35 @@
+{
+  "name": "session3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "hbs": "^4.1.2",
+    "nodemon": "^2.0.12",
+    "request": "^2.88.2",
+    "validator": "^13.6.0",
+    "yargs": "^17.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reem99Asad/test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Reem99Asad/test/issues"
+  },
+  "homepage": "https://github.com/Reem99Asad/test#readme"
+}

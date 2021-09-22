@@ -1,0 +1,20 @@
+{
+  "name": "rev5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "calk": "0.0.1-security",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "hbs": "^4.1.2",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

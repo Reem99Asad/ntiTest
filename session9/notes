@@ -1,0 +1,27 @@
+router.patch('/all/:id', async(req,res)=>{
+    avalUpdatates = ["name", "age"]
+    requested = Object.keys(req.body)
+    isValid = requested.every( r => avalUpdatates.includes(r) )
+    if(!isValid) res.send('updates unavaliable')
+    try{
+        const data = await User.findByIdAndUpdate(req.params.id, req.body, {runValidators:true})
+        if(!data) res.send('user not found')
+        res.send('done')
+    }
+    catch(e){
+        res.send(e)
+    }
+})
+
+
+router.delete('/all/:id', async(req,res)=>{
+    try{
+        const data = await User.findByIdAndDelete(req.params.id)
+        if(!data) res.send('user not found')
+        res.send('deleted')
+       }
+
+    catch(e){
+        res.send(e)
+    }
+})
