@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended:true}))
 
 app.use(express.json())
  
-app.use('/customer',userRoutes)
+app.use('/user',userRoutes)
 app.use('/product',productRoutes)
 
 let storage=multer.diskStorage({

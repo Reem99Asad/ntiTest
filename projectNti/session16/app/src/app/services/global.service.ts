@@ -14,7 +14,7 @@ export class GlobalService {
     {path:"",key:"home"},
     {path:"user/addAddress",key:"add address",isAuth:true},
     {path:"user/editprofile",key:"editprofile",isAuth:true},
-    {path:"product/addproduct",key:"add product",isAuth:true},
+    {path:"addproduct",key:"add product",isAuth:true},
     {path:"product/allproduct",key:"allproduct",isAuth:true},
     {path:"product/editproduct",key:"editproduct",isAuth:true},
   ]  
