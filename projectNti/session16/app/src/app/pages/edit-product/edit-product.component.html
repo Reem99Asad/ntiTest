@@ -1,0 +1,26 @@
+<section class="my-4 container">
+    <div class="row d-flex justify-content-center my-4">
+        <form class="border border-3 border-primary p-5 col-6" 
+       [formGroup]="editproductForm" (ngSubmit)="editproduct()">
+    <div class="mb-3">
+        <input placeholder="name" class="form-control" formControlName="name">
+        <div *ngIf="name?.invalid" class="alert alert-danger">
+            <p *ngIf="name?.errors?.required">nameproduct is required</p>
+            <p *ngIf="name?.errors?.minLength">nameproduct minLength 3</p>
+            <p *ngIf="name?.errors?.maxLength">nameproduct maxLength 20</p>
+        </div>   
+    </div>
+    <div class="mb-3">
+        <input placeholder="category"  class="form-control"
+         formControlName="category">
+         <div *ngIf="category?.invalid" class="alert alert-danger">
+            <p *ngIf="category?.errors?.required">category is required</p>
+        </div>
+    </div>
+    
+    <div class="mb-3">
+        <button class="btn btn-success">editproduct</button>
+    </div>
+    </form> 
+    </div>
+</section>
