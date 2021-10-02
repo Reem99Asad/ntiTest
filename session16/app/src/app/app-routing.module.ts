@@ -14,13 +14,10 @@ import { SingleProductComponent } from './pages/single-product/single-product.co
 import { AllProductsComponent } from './pages/all-products/all-products.component';
 const routes: Routes = [
  {path:"",component:HomeComponent},
- {path:"user",children:[
  {path:"register",component:RegisterComponent,canActivate:[IsLoggedGuard]},
  {path:"login",component:LoginComponent,canActivate:[IsLoggedGuard]},
  {path:"addorder",component:AddorderComponent,canActivate:[IsLoggedGuard]},
- {path:"editprofile",component:ProfileComponent,canActivate:[IsLoggedGuard]}
- ]},
- {path:"product",children:[
+ {path:"editprofile",component:ProfileComponent,canActivate:[IsLoggedGuard]},
    {path:"addproduct",component:AddproductComponent,canActivate:[IsnotLoggedGuard]},
    {path:"editProduct", component:EditProductComponent, canActivate:[IsnotLoggedGuard]},
    {path:"editProduct/:id", component:SingleProductComponent, canActivate:[IsnotLoggedGuard]},
@@ -28,8 +25,7 @@ const routes: Routes = [
    {path:"myproducts/:id",component:SingleProductComponent,canActivate:[IsnotLoggedGuard]},
    {path:"**",component:Err404Component}
 
- ]}
-
+ 
 ];
 
 @NgModule({

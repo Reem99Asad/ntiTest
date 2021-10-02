@@ -20,25 +20,25 @@ export class GlobalService {
   ]  
   public isloggedIn=localStorage.getItem("AppToken")?true:false
   public navMenu=localStorage.getItem("AppToken")?this.myloggedRoutes:this.myRoutes
-  commonUrl="http://localhost:3000/"
+  commonUrl=`http://localhost:3000/`
   constructor(private _http:HttpClient) { }
   register(data:any):Observable<any>{
-    return this._http.post(`${this.commonUrl}customer/register`,data)
+    return this._http.post(`${this.commonUrl}user/register`,data)
   }
   login(data:any):Observable<any>{
-    return this._http.post(`${this.commonUrl}customer/login`,data)
+    return this._http.post(`${this.commonUrl}user/login`,data)
   }
   logout():Observable<any>{
-    return this._http.post(`${this.commonUrl}customer/logout`,null)
+    return this._http.post(`${this.commonUrl}user/logout`,null)
   }
   getProfile():Observable<any>{
-    return this._http.get(`${this.commonUrl}customer/me`)
+    return this._http.get(`${this.commonUrl}user/me`)
   }
   editprofile(data:any):Observable<any>{
-    return this._http.post(`${this.commonUrl}customer/me`,data)
+    return this._http.post(`${this.commonUrl}user/me`,data)
   }
   addOrder(data:any):Observable<any>{
-    return this._http.post(`${this.commonUrl}customer/addorder`,data)
+    return this._http.post(`${this.commonUrl}user/addorder`,data)
   }
   addProduct(data:any):Observable<any>{
     return this._http.post(`${this.commonUrl}product/addproduct`,data)
