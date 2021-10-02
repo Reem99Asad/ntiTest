@@ -1,23 +1,27 @@
 <section class="container my-4">
-    <div class="row d-flex justify-content-center my-4">
-        <form class="border border-3 border-primary p-5 col-6" [formGroup]="addproductForm"  (ngSubmit)="addproduct()">
-            <div class="product-item mb-3">
-                <div class="product-item-pic">
-                    <div class="product-label" formControlName="name">
-                        <span >Cupcake</span>
-                    </div>
+        <form class="border border-3 border-primary p-5 col-6" 
+        [formGroup]="addproductForm"  (ngSubmit)="addproduct()">
+         <div class="mb-3">
+           <input formControlName="name" class="form-control" placeholder="productname">
+           <div *ngIf="name?.invalid" class="alert alert-danger">
+               <p *ngIf="name?.errors?.required">productname is required</p>
+           </div>
+           </div> 
+           <div class="mb-3">
+            <input formControlName="category" class="form-control" placeholder="productcategory">
+            <div *ngIf="category?.invalid" class="alert alert-danger">
+                <p *ngIf="category?.errors?.required">productcategory is required</p>
+            </div>
+            </div> 
+            <div class="mb-3">
+                <input formControlName="price" class="form-control" placeholder="productprice">
+                <div *ngIf="price?.invalid" class="alert alert-danger">
+                    <p *ngIf="price?.errors?.required">productprice is required</p>
                 </div>
-                <!-- <div class="product-item-name">
-                      <h6>
-                          <a href="#">Dozen Cupcake</a>
-                      </h6>
-                <div class="product-item-price">40.00$</div>
-            </div>-->
-        </div> 
+                </div>     
         <div class="mb-3">
-            <button class="btn btn-danger">addOrder</button>
+            <button class="btn btn-danger">addproduct</button>
         </div>
         
         </form>
-    </div>
 </section>

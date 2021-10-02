@@ -20,6 +20,8 @@ import { EditProductComponent } from './pages/edit-product/edit-product.componen
 import { AllProductsComponent } from './pages/all-products/all-products.component';
 import { SingleProductComponent } from './pages/single-product/single-product.component';
 import { HomeComponent } from './pages/home/home.component';
+import { Err404Component } from './pages/err404/err404.component';
+
 
 
 @NgModule({
@@ -40,13 +42,16 @@ import { HomeComponent } from './pages/home/home.component';
     AllProductsComponent,
     SingleProductComponent,
     HomeComponent,
+    Err404Component,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+  
   ],
   providers: [ { provide:HTTP_INTERCEPTORS, useClass:UserInterceptor,multi:true } ],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl,FormGroup } from '@angular/forms';
+import { FormControl,FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {GlobalService } from 'src/app/services/global.service';
 @Component({
@@ -8,12 +8,15 @@ import {GlobalService } from 'src/app/services/global.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  message=""
   loginForm=new FormGroup({
-    email:new FormControl("reem@26nti.com"),
-    password:new FormControl("123456789")
+    email:new FormControl('',[Validators.email,Validators.required]),
+    password:new FormControl('',[Validators.email,Validators.required]),
   })
-  constructor(private _global:GlobalService,private _router:Router) { }
+  get email(){return this.loginForm.get('email')}
+  get password(){return this.loginForm.get('password')}
+
+  constructor(public _global:GlobalService,private _router:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,10 +24,10 @@ export class LoginComponent implements OnInit {
     
     this._global.login(this.loginForm.value).subscribe(
       data=>{localStorage.setItem('AppToken',data.data.token)},
-      ()=>{},
+      (e)=>{this.message="unauthorized"},
       ()=>{
         this._global.navMenu=this._global.myloggedRoutes
-        this._router.navigateByUrl('/user/profile')
+        this._router.navigateByUrl('/profile')
       }
     )
   }

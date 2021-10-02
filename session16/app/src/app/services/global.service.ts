@@ -13,7 +13,7 @@ export class GlobalService {
   public myloggedRoutes=[
     {path:"",key:"home"},
     {path:"user/addAddress",key:"add address",isAuth:true},
-    {path:"user/profile",key:"profile",isAuth:true},
+    {path:"user/editprofile",key:"editprofile",isAuth:true},
     {path:"product/addproduct",key:"add product",isAuth:true},
     {path:"product/allproduct",key:"allproduct",isAuth:true},
     {path:"product/editproduct",key:"editproduct",isAuth:true},
@@ -28,11 +28,14 @@ export class GlobalService {
   login(data:any):Observable<any>{
     return this._http.post(`${this.commonUrl}customer/login`,data)
   }
-  logout(data:any):Observable<any>{
+  logout():Observable<any>{
     return this._http.post(`${this.commonUrl}customer/logout`,null)
   }
-  me():Observable<any>{
-    return this._http.post(`${this.commonUrl}customer/me`,null)
+  getProfile():Observable<any>{
+    return this._http.get(`${this.commonUrl}customer/me`)
+  }
+  editprofile(data:any):Observable<any>{
+    return this._http.post(`${this.commonUrl}customer/me`,data)
   }
   addOrder(data:any):Observable<any>{
     return this._http.post(`${this.commonUrl}customer/addorder`,data)
@@ -40,10 +43,24 @@ export class GlobalService {
   addProduct(data:any):Observable<any>{
     return this._http.post(`${this.commonUrl}product/addproduct`,data)
   }
+  getproduct():Observable<any>{
+    return this._http.get(`${this.commonUrl}product/me`)
+  }
   editproduct(data:any,id:any):Observable<any>{
     return this._http.patch(`${this.commonUrl}product/${id}`,data)
   }
+  singleProduct(id:any):Observable<any>{
+    return this._http.get(`${this.commonUrl}product/${id}`)
+  }
   myproducts():Observable<any>{
     return this._http.get(`${this.commonUrl}product/myproducts`)
+  }
+  deleteProduct(id:any):Observable<any>{
+    return this._http.delete(`${this.commonUrl}product/${id}`)
+  }
+  addProductimage(file:any):Observable<any>{
+    const formData=new FormData()
+    formData.append('img',file,file.name)
+    return this._http.post(`${this.commonUrl}uploadImg`,formData)
   }
 }

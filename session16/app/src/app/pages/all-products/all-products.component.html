@@ -1,1 +1,23 @@
-<p>all-products works!</p>
+<section class="container my-5">
+    <table class="table table-bordered">
+        <thead>
+            <th>#</th>
+            <th>product name</th>
+            <th>category</th>
+            <th>actions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of myProducts; let i= index">
+              <td>{{i+1}}</td>
+              <td>{{p.name}}</td>
+              <td>{{p.category}}</td>
+              <td>{{p.price}}</td>
+              <td>
+                  <button routerLink="/myProducts/{{p._id}}" class="btn btn-primary mx-2">Show</button>
+                  <button routerLink="/editProduct/{{p._id}}" class="btn btn-warning mx-2">edit</button>
+                  <button (click)="delProduct(p._id, i)" class="btn btn-danger mx-2">delete</button>
+              </td>
+          </tr>  
+        </tbody>
+    </table>
+</section>
